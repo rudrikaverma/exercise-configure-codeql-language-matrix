@@ -23,6 +23,7 @@ jobs:
           feedback: ${{ steps.events.outputs.reports }}
   troubleshoot-activity:
     if: github.event_name == 'workflow_dispatch'
+    if: matrix.language == 'java'
     runs-on: ubuntu-latest
     steps:
       - name: troubleshooting steps
